@@ -1,0 +1,4 @@
+verilog work "../Proyecto 1/RAM.v"
+verilog work "../Proyecto 1/Module_ROM.v"
+verilog work "../Proyecto 1/Collaterals.v"
+verilog work "../Proyecto 1/MiniAlu.v"

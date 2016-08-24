@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/david/Documents/Digitales/MIniAlu/impact.xsl
+OUTFILE=/home/david/Documents/Digitales/MIniAlu/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/david/Documents/Digitales/MIniAlu
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Aug 17 09:17:57 2016
+# Process ID: 14362
+# Log file: /home/david/Documents/Digitales/MIniAlu/planAhead_run_1/planAhead.log
+# Journal file: /home/david/Documents/Digitales/MIniAlu/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/david/Documents/Digitales/MIniAlu/pa.fromNetlist.tcl
