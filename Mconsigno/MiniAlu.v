@@ -182,6 +182,8 @@ begin
 		rWriteEnable <= 1'b1;
 		rResult      <= wMulResult[15:0];
 		rParteAlta   <= wMulResult[31:16];
+		
+		$display("%dns %h * %h = %h",$time,wSourceData0,wSourceData1,rResult); 
 	end
 	//-------------------------------------
 	`MULS:
