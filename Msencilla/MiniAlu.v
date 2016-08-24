@@ -156,6 +156,13 @@ begin
 		rBranchTaken <= 1'b0;
 	end
 	//-------------------------------------
+	`MUL:
+	begin
+		rFFLedEN     <= 1'b0;
+		rBranchTaken <= 1'b0;
+		rWriteEnable <= 1'b1;
+		rResult      <= wSourceData1 * wSourceData0;
+	end
 	default:
 	begin
 		rFFLedEN     <= 1'b1;
