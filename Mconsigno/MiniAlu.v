@@ -183,7 +183,7 @@ begin
 		rResult      <= wMulResult[15:0];
 		rParteAlta   <= wMulResult[31:16];
 		
-		$display("%dns %h * %h = %h",$time,wSourceData0,wSourceData1,rResult); 
+		$display("%dns %h * %h = %d",$time,wSourceData0,wSourceData1,wMulResult); 
 	end
 	//-------------------------------------
 	`MULS:

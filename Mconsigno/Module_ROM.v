@@ -13,10 +13,10 @@ begin
 	case (iAddress)
 
 	0: oInstruction = { `NOP ,24'd4000    };
-	1: oInstruction = { `STO , `R1, 16'd2 };
-	2: oInstruction = { `STO , `R2, 16'd2};
+	1: oInstruction = { `STO , `R1, 16'd20000 };
+	2: oInstruction = { `STO , `R2, -16'd2};
 	3: oInstruction = { `NOP , `R2, 16'd2};
-	4: oInstruction = { `MULU, `R3, `R1,`R2};
+	4: oInstruction = { `MULS, `R3, `R1,`R2};
 	5: oInstruction = { `JMP ,  8'd1,16'b0   };
 	default:
 		oInstruction = { `LED ,  24'b10101010 };		//NOP
