@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`include "Definitions.v"
+`include "Defintions.v"
 module RAM_DUAL_READ_PORT # ( parameter DATA_WIDTH= 16, parameter ADDR_WIDTH=8, parameter MEM_SIZE=8 )
 (
 	input wire						Clock,
