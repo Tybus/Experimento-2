@@ -1,0 +1,6 @@
+verilog isim_temp "../../RAM.v"
+verilog isim_temp "../../Module_ROM.v"
+verilog isim_temp "../../Collaterals.v"
+verilog isim_temp "../../MiniAlu.v"
+verilog isim_temp "../../TestBench.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,36 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/TestBench_isim_beh.exe -prj C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/TestBench_beh.prj work.TestBench work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../RAM.v" into library work
+Analyzing Verilog file "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Module_ROM.v" into library work
+Analyzing Verilog file "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Collaterals.v" into library work
+WARNING:HDLCompiler:248 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Collaterals.v" Line 83: Block identifier is required on this block
+WARNING:HDLCompiler:248 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Collaterals.v" Line 107: Block identifier is required on this block
+WARNING:HDLCompiler:248 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Collaterals.v" Line 76: Block identifier is required on this block
+WARNING:HDLCompiler:248 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../Collaterals.v" Line 131: Block identifier is required on this block
+Analyzing Verilog file "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../MiniAlu.v" into library work
+Analyzing Verilog file "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../TestBench.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../MiniAlu.v" Line 50: Size mismatch in connection of port <Initial>. Formal port size is 16-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../MiniAlu.v" Line 61: Size mismatch in connection of port <D>. Formal port size is 8-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../MiniAlu.v" Line 62: Size mismatch in connection of port <Q>. Formal port size is 8-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/../../MiniAlu.v" Line 99: Size mismatch in connection of port <D>. Formal port size is 8-bit while actual signal size is 16-bit.
+Completed static elaboration
+Compiling module ROM
+Compiling module RAM_DUAL_READ_PORT
+Compiling module UPCOUNTER_POSEDGE
+Compiling module FFD_POSEDGE_SYNCRONOUS_RESET
+Compiling module MODULE_ADDER
+Compiling module MODULE_MUL_default
+Compiling module MiniAlu
+Compiling module TestBench
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 9 Verilog Units
+Built simulation executable C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/TestBench_isim_beh.exe
+Fuse Memory Usage: 36288 KB
+Fuse CPU Usage: 686 ms

@@ -13,8 +13,9 @@ begin
 	case (iAddress)
 
 	0: oInstruction = { `NOP ,24'd4000    };
-	1: oInstruction = { `STO , `R1,16'd10 };
-	2: oInstruction = { `STO ,`R2,16'd10     };
+	1: oInstruction = { `STO , `R1,16'd60000 };
+	2: oInstruction = { `STO ,`R2,16'd2     };
+	3: oInstruction = { `NOP ,24'd4000    };
 	3: oInstruction = { `NOP ,24'd4000    };	
 	4: oInstruction = { `IMUL, `R3, `R1, `R2 };
 	default:

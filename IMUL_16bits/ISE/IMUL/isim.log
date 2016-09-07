@@ -1,0 +1,25 @@
+ISim log file
+Running: C:\Users\danie\Documents\Labo Digitales\Exp II\IMUL_16bits\ISE\IMUL\TestBench_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/ISE/IMUL/TestBench_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING:  For instance uut/IP/, width 16 of formal port Initial is not equal to width 32 of actual constant.
+WARNING: For instance uut/FFD1/, width 8 of formal port D is not equal to width 4 of actual.
+WARNING: File "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/MiniAlu.v" Line 18.  For instance uut/FFD1/, width 8 of formal port Q is not equal to width 4 of actual signal wOperation.
+WARNING: File "C:/Users/danie/Documents/Labo Digitales/Exp II/IMUL_16bits/MiniAlu.v" Line 22.  For instance uut/FF_LEDS/, width 8 of formal port D is not equal to width 16 of actual signal wSourceData1.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
