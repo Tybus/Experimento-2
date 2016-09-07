@@ -102,14 +102,14 @@ module MULTIPLIER #(parameter SIZE =16)(
 	output reg [2*SIZE-1:0]	oOUT
 );	
 	
-	wire [SIZE/2-1:0] wResultTemp [2*SIZE-1:0]; //wire [SIZE/2-1:0] wResultTemp [2*SIZE-1:0]
+	wire [SIZE-1:0] wResultTemp [SIZE/2-1:0]; //wire [SIZE/2-1:0] wResultTemp [2*SIZE-1:0]
 	wire [SIZE/2-1:0]	wResultToAdd [2*SIZE -1 :0];
 	wire [SIZE/2-1:0] wAddSteps [2*SIZE -1 :0];
 	assign wAddSteps[0] = wResultToAdd[0];
 	
 	genvar i;
 	generate
-		for (i = 0; (2*i +1) < SIZE/2; i = i+1)
+		for (i = 0; i < SIZE/2; i = i+1)
 		begin: MY_MUL_GEN
 				MUX_MUL multiplicador
 				(
