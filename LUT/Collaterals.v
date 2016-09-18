@@ -99,12 +99,12 @@ endmodule
 module MULTIPLIER #(parameter SIZE =16)(
 	input wire [SIZE-1:0]		wA,
 	input wire [SIZE-1:0]		wB,
-	output reg [2*SIZE-1:0]	oOUT
+	output wire [2*SIZE-1:0]	oOUT
 );	
 	
 	wire [SIZE-1:0] wResultTemp [SIZE/2-1:0]; //wire [SIZE/2-1:0] wResultTemp [2*SIZE-1:0]
-	wire [SIZE/2-1:0]	wResultToAdd [2*SIZE -1 :0];
-	wire [SIZE/2-1:0] wAddSteps [2*SIZE -1 :0];
+	wire [2*SIZE-1:0]	wResultToAdd [SIZE/2-1:0];
+	wire [2*SIZE -1 :0] wAddSteps [SIZE/2-1:0];
 	assign wAddSteps[0] = wResultToAdd[0];
 	
 	genvar i;
@@ -124,7 +124,6 @@ module MULTIPLIER #(parameter SIZE =16)(
 		end		
 	endgenerate	
 	
-	always @ ( * )
-		oOUT <= wAddSteps[SIZE/2-1];
+	assign oOUT = wAddSteps[7];
 		
 endmodule	

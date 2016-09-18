@@ -12,13 +12,22 @@ module MiniAlu
  
 );
 
-wire [15:0]  wIP,wIP_temp;
-reg         rWriteEnable,rBranchTaken;
+wire [15:0] wIP,wIP_temp;
+reg         rWriteEnable,rBranchTaken,rMulEnable;
 wire [27:0] wInstruction;
 wire [3:0]  wOperation;
-reg [15:0]   rResult;
+reg [15:0]  rResult;
+reg [15:0] rParteAlta;
 wire [7:0]  wSourceAddr0,wSourceAddr1,wDestination;
 wire [15:0] wSourceData0,wSourceData1,wIPInitialValue,wImmediateValue;
+wire [31:0] wMulResult;
+
+MULTIPLIER LutMUL
+(
+	.wA(wSourceData0),
+	.wB(wSourceData1),
+	.oOUT(wMulResult)
+);
 
 ROM InstructionRom 
 (
@@ -35,7 +44,9 @@ RAM_DUAL_READ_PORT DataRam
 	.iWriteAddress( wDestination ),
 	.iDataIn(       rResult      ),
 	.oDataOut0(     wSourceData0 ),
-	.oDataOut1(     wSourceData1 )
+	.oDataOut1(     wSourceData1 ),
+	.iMulEnable(	rMulEnable),
+	.iParteAlta(rParteAlta)
 );
 
 assign wIPInitialValue = (Reset) ? 8'b0 : wDestination;
@@ -100,12 +111,14 @@ assign wImmediateValue = {wSourceAddr1,wSourceAddr0};
 
 
 
+
 always @ ( * )
 begin
 	case (wOperation)
 	//-------------------------------------
 	`NOP:
 	begin
+		rMulEnable <= 1'b0;
 		rFFLedEN     <= 1'b0;
 		rBranchTaken <= 1'b0;
 		rWriteEnable <= 1'b0;
@@ -114,6 +127,7 @@ begin
 	//-------------------------------------
 	`ADD:
 	begin
+		rMulEnable <= 1'b0;
 		rFFLedEN     <= 1'b0;
 		rBranchTaken <= 1'b0;
 		rWriteEnable <= 1'b1;
@@ -122,6 +136,7 @@ begin
 	//-------------------------------------
 	`STO:
 	begin
+		rMulEnable <= 1'b0;
 		rFFLedEN     <= 1'b0;
 		rWriteEnable <= 1'b1;
 		rBranchTaken <= 1'b0;
@@ -130,6 +145,7 @@ begin
 	//-------------------------------------
 	`BLE:
 	begin
+		rMulEnable   <= 1'b0;
 		rFFLedEN     <= 1'b0;
 		rWriteEnable <= 1'b0;
 		rResult      <= 0;
@@ -142,6 +158,7 @@ begin
 	//-------------------------------------	
 	`JMP:
 	begin
+		rMulEnable   <= 1'b0;
 		rFFLedEN     <= 1'b0;
 		rWriteEnable <= 1'b0;
 		rResult      <= 0;
@@ -150,10 +167,21 @@ begin
 	//-------------------------------------	
 	`LED:
 	begin
+		rMulEnable   <= 1'b0;
 		rFFLedEN     <= 1'b1;
 		rWriteEnable <= 1'b0;
 		rResult      <= 0;
 		rBranchTaken <= 1'b0;
+	end
+	//-------------------------------------
+	`IMUL2:
+	begin
+		rMulEnable   <= 1'b1;
+		rFFLedEN     <= 1'b0;
+		rBranchTaken <= 1'b0;
+		rWriteEnable <= 1'b1;
+		rResult      <= wMulResult[15:0];
+		rParteAlta   <= wMulResult[31:16];
 	end
 	//-------------------------------------
 	default:
